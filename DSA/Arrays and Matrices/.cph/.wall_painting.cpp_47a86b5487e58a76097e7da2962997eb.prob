@@ -1,0 +1,1 @@
+{"name":"Local: wall_painting","url":"c:\\Users\\dpk43\\Music\\DSA\\Arrays and Matrices\\wall_painting.cpp","tests":[{"id":1733753481317,"input":"3 2\n1 1 5 5\n4 4 7 6\n3 3 8 7","output":"8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\Arrays and Matrices\\wall_painting.cpp","group":"local","local":true}

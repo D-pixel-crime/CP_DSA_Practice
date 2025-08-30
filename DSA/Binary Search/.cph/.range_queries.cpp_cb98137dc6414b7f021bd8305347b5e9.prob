@@ -1,0 +1,1 @@
+{"name":"Local: range_queries","url":"c:\\Users\\dpk43\\Music\\DSA\\Binary Search\\range_queries.cpp","tests":[{"id":1734359515755,"input":"5 2\n1 5 2 3 5\n1 3\n4 5","output":"3 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\Binary Search\\range_queries.cpp","group":"local","local":true}

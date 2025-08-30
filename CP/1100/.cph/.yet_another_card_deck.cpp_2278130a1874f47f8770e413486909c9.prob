@@ -1,0 +1,1 @@
+{"name":"Local: yet_another_card_deck","url":"c:\\Users\\dpk43\\Music\\CP\\1100\\yet_another_card_deck.cpp","tests":[{"id":1755186613765,"input":"7 5\n2 1 1 4 3 3 1\n3 2 1 1 4\n","output":"5 2 3 1 5 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\CP\\1100\\yet_another_card_deck.cpp","group":"local","local":true}

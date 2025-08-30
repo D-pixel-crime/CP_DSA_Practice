@@ -1,0 +1,1 @@
+{"name":"Local: beautiful_snowflakes","url":"c:\\Users\\dpk43\\Music\\DSA\\Graph\\beautiful_snowflakes.cpp","tests":[{"id":1754499197556,"input":"11 8\n1 2\n2 3\n4 5\n6 5\n7 5\n8 5\n9 5\n10 5","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\Graph\\beautiful_snowflakes.cpp","group":"local","local":true}

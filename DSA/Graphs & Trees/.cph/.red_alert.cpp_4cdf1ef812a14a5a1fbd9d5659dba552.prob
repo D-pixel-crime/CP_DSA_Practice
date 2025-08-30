@@ -1,0 +1,1 @@
+{"name":"Local: red_alert","url":"c:\\Users\\dpk43\\Music\\DSA\\Graph\\red_alert.cpp","tests":[{"id":1754887939720,"input":"4 1\n1 1 0 0\n1 2\n1 3\n1 4","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\Graph\\red_alert.cpp","group":"local","local":true}

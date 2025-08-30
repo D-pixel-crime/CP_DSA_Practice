@@ -1,0 +1,1 @@
+{"name":"Local: simple_palindrome","url":"c:\\Users\\dpk43\\Music\\CP\\900 Rating\\simple_palindrome.cpp","tests":[{"id":1749922045813,"input":"3\n2\n3\n6\n","output":"uo\niae\noeiiua\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\CP\\900 Rating\\simple_palindrome.cpp","group":"local","local":true}

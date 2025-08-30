@@ -1,0 +1,1 @@
+{"name":"Local: jellyfish_and_undertale","url":"c:\\Users\\dpk43\\Music\\CP\\900 Rating\\jellyfish_and_undertale.cpp","tests":[{"id":1744638439976,"input":"2\n5 3 3\n1 1 7\n7 1 5\n1 2 5 6 8\n","output":"9\n21"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\CP\\900 Rating\\jellyfish_and_undertale.cpp","group":"local","local":true}

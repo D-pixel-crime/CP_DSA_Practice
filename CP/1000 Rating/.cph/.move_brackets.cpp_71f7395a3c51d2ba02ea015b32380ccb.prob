@@ -1,0 +1,1 @@
+{"name":"Local: move_brackets","url":"c:\\Users\\dpk43\\Music\\CP\\1000 Rating\\move_brackets.cpp","tests":[{"id":1750762014940,"input":"4\n2\n)(\n4\n()()\n8\n())()()(\n10\n)))((((())\n","output":"1\n0\n1\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\CP\\1000 Rating\\move_brackets.cpp","group":"local","local":true}

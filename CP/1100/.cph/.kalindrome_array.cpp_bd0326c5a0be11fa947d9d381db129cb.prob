@@ -1,0 +1,1 @@
+{"name":"Local: kalindrome_array","url":"c:\\Users\\dpk43\\Music\\CP\\1100\\kalindrome_array.cpp","tests":[{"id":1755185842003,"input":"4\n1\n1\n2\n1 2\n3\n1 2 3\n5\n1 4 4 1 4\n","output":"YES\nYES\nNO\nYES\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\CP\\1100\\kalindrome_array.cpp","group":"local","local":true}

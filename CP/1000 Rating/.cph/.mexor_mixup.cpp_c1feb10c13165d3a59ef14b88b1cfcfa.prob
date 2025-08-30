@@ -1,0 +1,1 @@
+{"name":"Local: mexor_mixup","url":"c:\\Users\\dpk43\\Music\\CP\\1000 Rating\\mexor_mixup.cpp","tests":[{"id":1750471214394,"input":"5\n1 1\n2 1\n2 0\n1 10000\n2 10000\n","output":"3\n2\n3\n2\n3\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\CP\\1000 Rating\\mexor_mixup.cpp","group":"local","local":true}

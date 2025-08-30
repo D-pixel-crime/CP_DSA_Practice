@@ -1,0 +1,1 @@
+{"name":"Local: big_discs","url":"c:\\Users\\dpk43\\Music\\DSA\\Graph\\big_discs.cpp","tests":[{"id":1754732827532,"input":"1\n20 10\n2\n10 7 2\n10 4 2","output":"YES"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\Graph\\big_discs.cpp","group":"local","local":true}

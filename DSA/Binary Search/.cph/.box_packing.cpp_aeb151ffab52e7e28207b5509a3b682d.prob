@@ -1,0 +1,1 @@
+{"name":"Local: box_packing","url":"c:\\Users\\dpk43\\Music\\DSA\\Binary Search\\box_packing.cpp","tests":[{"id":1736510236372,"input":"5\n2 3 10\n1 5 2\n1 1 6\n4 1 5\n1 9 9","output":"9\n5\n3\n5\n9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\Binary Search\\box_packing.cpp","group":"local","local":true}

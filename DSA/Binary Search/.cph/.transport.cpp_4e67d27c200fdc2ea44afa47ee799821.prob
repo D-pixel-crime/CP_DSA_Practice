@@ -1,0 +1,1 @@
+{"name":"Local: transport","url":"c:\\Users\\dpk43\\Music\\DSA\\Binary Search\\transport.cpp","tests":[{"id":1736501750351,"input":"6 3 2\n1 1 10 14 4 3","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\Binary Search\\transport.cpp","group":"local","local":true}

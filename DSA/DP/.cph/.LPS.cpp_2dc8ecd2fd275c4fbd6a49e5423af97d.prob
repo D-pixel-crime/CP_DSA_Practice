@@ -1,0 +1,1 @@
+{"name":"Local: LPS","url":"c:\\Users\\dpk43\\Music\\DSA\\DP\\LPS.cpp","tests":[{"id":1748872201213,"input":"aabbxbyaza","output":"7"},{"id":1748872208175,"input":"abcd","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\DP\\LPS.cpp","group":"local","local":true}

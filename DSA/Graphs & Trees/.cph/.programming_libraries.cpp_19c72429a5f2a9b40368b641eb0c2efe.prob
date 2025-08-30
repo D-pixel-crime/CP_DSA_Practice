@@ -1,0 +1,1 @@
+{"name":"Local: programming_libraries","url":"c:\\Users\\dpk43\\Music\\DSA\\Graph\\programming_libraries.cpp","tests":[{"id":1754733656638,"input":"7 7\n0 1\n2 3\n1 4\n3 4\n3 5\n4 5\n4 6","output":"2 3 0 1 4 6 5 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\Graph\\programming_libraries.cpp","group":"local","local":true}

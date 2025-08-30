@@ -1,0 +1,1 @@
+{"name":"Local: shoe_shuffling","url":"c:\\Users\\dpk43\\Music\\CP\\1000 Rating\\shoe_shuffling.cpp","tests":[{"id":1750386108439,"input":"2\n5\n1 1 1 1 1\n6\n3 6 8 13 15 21\n","output":"5 1 2 3 4 \n-1\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\CP\\1000 Rating\\shoe_shuffling.cpp","group":"local","local":true}

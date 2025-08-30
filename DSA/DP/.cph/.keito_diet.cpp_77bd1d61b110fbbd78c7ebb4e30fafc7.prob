@@ -1,0 +1,1 @@
+{"name":"Local: keito_diet","url":"c:\\Users\\dpk43\\Music\\DSA\\DP\\keito_diet.cpp","tests":[{"id":1749405162333,"input":"50 50\n5\n8 43 27\n32 2 21\n8 34 48\n31 29 36\n23 2 11","output":"74"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\DP\\keito_diet.cpp","group":"local","local":true}

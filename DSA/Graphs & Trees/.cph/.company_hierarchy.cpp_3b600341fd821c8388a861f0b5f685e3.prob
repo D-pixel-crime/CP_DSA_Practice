@@ -1,0 +1,1 @@
+{"name":"Local: company_hierarchy","url":"c:\\Users\\dpk43\\Music\\DSA\\Graph\\company_hierarchy.cpp","tests":[{"id":1754801421648,"input":"5\n1 1 2 3","output":"4 1 1 0 0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\DSA\\Graph\\company_hierarchy.cpp","group":"local","local":true}

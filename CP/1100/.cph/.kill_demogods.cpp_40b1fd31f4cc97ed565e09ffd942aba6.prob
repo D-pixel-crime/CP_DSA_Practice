@@ -1,0 +1,1 @@
+{"name":"Local: kill_demogods","url":"c:\\Users\\dpk43\\Music\\CP\\1100\\kill_demogods.cpp","tests":[{"id":1754672745424,"input":"4\n2\n3\n50\n1000000000\n","output":"14154\n44484\n171010650\n999589541\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\dpk43\\Music\\CP\\1100\\kill_demogods.cpp","group":"local","local":true}
