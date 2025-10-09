@@ -1,10 +1,9 @@
 {
   "files.associations": {
     "*.embeddedhtml": "html",
-    "ostream": "cpp",
     "iostream": "cpp",
-    "random": "cpp",
-    "bitset": "cpp",
+    "tuple": "cpp",
+    "ostream": "cpp",
     "array": "cpp",
     "deque": "cpp",
     "forward_list": "cpp",
@@ -22,7 +21,6 @@
     "stacktrace": "cpp",
     "text_encoding": "cpp",
     "regex": "cpp",
-    "valarray": "cpp",
-    "cmath": "cpp"
+    "valarray": "cpp"
   }
 }
