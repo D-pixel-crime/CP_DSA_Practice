@@ -23,6 +23,7 @@
     "text_encoding": "cpp",
     "regex": "cpp",
     "valarray": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "cstdlib": "cpp"
   }
 }
