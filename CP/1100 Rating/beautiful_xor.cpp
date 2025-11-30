@@ -202,48 +202,52 @@ int knuthMorrisPratt(string &s, string &p)
     return j == p.size() - 1 ? i - j : -1;
 }
 
-void solve()
+int msb(int n)
 {
-    int n;
-    cin >> n;
-
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    int ans = 0;
+    for (int i = 0; i <= 31; i++)
     {
-        cin >> arr[i];
+        int temp = 1 << i;
+        if (temp & n)
+        {
+            ans = i;
+        }
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    return ans;
+}
+
+void solve()
+{
+    int a, b;
+    cin >> a >> b;
+
+    int msbA = msb(a), msbB = msb(b);
+    if (msbA < msbB)
     {
-        if (odd)
+        cout << -1 << endl;
+        return;
+    }
+    if (a == b)
+    {
+        cout << 0 << endl;
+        return;
+    }
+
+    vector<int> ans;
+    for (int i = 0; i <= 31; i++)
+    {
+        int temp = 1 << i;
+        if ((a & temp) != (b & temp))
         {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            ans.push_back(temp);
         }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
+    }
+
+    cout << ans.size() << endl;
+    for (auto &i : ans)
+    {
+        cout << i << " ";
     }
     cout << endl;
 }

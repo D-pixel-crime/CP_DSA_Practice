@@ -202,56 +202,69 @@ int knuthMorrisPratt(string &s, string &p)
     return j == p.size() - 1 ? i - j : -1;
 }
 
+vector<bool> isPrime;
+
 void solve()
 {
     int n;
     cin >> n;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    if (n <= 4)
     {
-        cin >> arr[i];
+        cout << -1 << endl;
+        return;
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    vector<int> arr(n + 1, 0);
+    for (int i = 1; i <= n; i += 2)
     {
-        if (odd)
+        for (int j = 2; j <= n; j += 2)
         {
-            if (arr[i] <= arr[j])
+            if (!isPrime[i + j])
             {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
+                int needed = n / 2 + n % 2 - 1;
+                int curr = 1;
+                while (needed)
+                {
+                    if (curr == i)
+                    {
+                        curr += 2;
+                    }
+                    cout << curr << " ";
+                    curr += 2;
+                    needed--;
+                }
+
+                needed = n / 2 - 1;
+                cout << i << " " << j << " ";
+                curr = 2;
+                while (needed)
+                {
+                    if (curr == j)
+                    {
+                        curr += 2;
+                    }
+                    cout << curr << " ";
+                    curr += 2;
+                    needed--;
+                }
+
+                cout << endl;
+                return;
             }
         }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
     }
-    cout << endl;
+
+    cout << -1 << endl;
 }
 
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+
+    int lim = 1e6;
+    isPrime = simpleSieve(lim);
 
     int t;
     cin >> t;

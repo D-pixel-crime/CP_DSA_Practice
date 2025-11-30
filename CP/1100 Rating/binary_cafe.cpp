@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -49,7 +50,7 @@ int binaryExponentiation(int x, int n, int m = mod)
     return ans;
 }
 
-int extendedEuclidean(int a, int m, int &x, int &y)
+ll extendedEuclidean(ll a, ll m, ll &x, ll &y)
 {
     if (m == 0)
     {
@@ -57,29 +58,29 @@ int extendedEuclidean(int a, int m, int &x, int &y)
         y = 0;
         return a;
     }
-    int x1, y1;
-    int gcd = extendedEuclidean(m, a % m, x1, y1);
+    ll x1, y1;
+    ll gcd = extendedEuclidean(m, a % m, x1, y1);
     x = y1;
     y = x1 - (a / m) * y1;
     return gcd;
 }
 
-int modularInverse(int a, int m)
+ll modularInverse(ll a, ll m)
 {
-    int x, y;
-    int gcd = extendedEuclidean(a, m, x, y);
+    ll x, y;
+    ll gcd = extendedEuclidean(a, m, x, y);
     if (gcd != 1)
         return -1;
     return (x % m + m) % m;
 }
 
-int fact(int n)
+ll fact(ll n)
 {
     if (n <= 1)
         return 1;
     if (factVals.count(n))
         return factVals[n];
-    int ans = 1, i = n;
+    ll ans = 1, i = n;
     while (i >= 2)
     {
         if (factVals.count(i))
@@ -95,11 +96,11 @@ int fact(int n)
     return factVals[n] = ans;
 }
 
-int nCx(int n, int x)
+ll nCx(ll n, ll x)
 {
-    int num = fact(n);
-    int denom = (1LL * fact(x) * fact(n - x)) % mod;
-    return (1LL * num * modularInverse(denom, mod)) % mod;
+    ll num = fact(n);
+    ll denom = (fact(x) * fact(n - x)) % mod;
+    return (num * modularInverse(denom, mod)) % mod;
 }
 
 vector<int> calculateZValues(string &s)
@@ -204,48 +205,12 @@ int knuthMorrisPratt(string &s, string &p)
 
 void solve()
 {
-    int n;
-    cin >> n;
+    int n, k;
+    cin >> n >> k;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
+    k = min(k, 30);
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
-    {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
-    }
-    cout << endl;
+    cout << min((1 << k) - 1, n) + 1 << endl;
 }
 
 int main()

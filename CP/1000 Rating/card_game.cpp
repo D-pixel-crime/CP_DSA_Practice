@@ -204,48 +204,31 @@ int knuthMorrisPratt(string &s, string &p)
 
 void solve()
 {
-    int n;
-    cin >> n;
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    vector<vector<int>> permA = {{a, b}, {b, a}}, permB = {{c, d}, {d, c}};
+
+    int ans = 0;
+    for (auto &i : permA)
     {
-        cin >> arr[i];
+        for (auto &j : permB)
+        {
+            int wa = 0, wb = 0;
+            for (int k = 0; k < 2; k++)
+            {
+                if (i[k] > j[k])
+                    wa++;
+                else if (j[k] > i[k])
+                    wb++;
+            }
+
+            if (wa > wb)
+                ans++;
+        }
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
-    {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
-    }
-    cout << endl;
+    cout << ans << endl;
 }
 
 int main()

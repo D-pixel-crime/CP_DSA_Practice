@@ -202,52 +202,6 @@ int knuthMorrisPratt(string &s, string &p)
     return j == p.size() - 1 ? i - j : -1;
 }
 
-void solve()
-{
-    int n;
-    cin >> n;
-
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
-
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
-    {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
-    }
-    cout << endl;
-}
-
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -255,9 +209,17 @@ int main()
 
     int t;
     cin >> t;
+    vector<int> cnt(26);
+    string s = "codeforces";
+    for (auto &i : s)
+    {
+        cnt[i - 'a']++;
+    }
     while (t--)
     {
-        solve();
+        char ch;
+        cin >> ch;
+        cout << (cnt[ch - 'a'] ? "YES\n" : "NO\n");
     }
 
     return 0;

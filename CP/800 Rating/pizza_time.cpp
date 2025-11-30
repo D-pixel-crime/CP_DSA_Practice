@@ -202,50 +202,30 @@ int knuthMorrisPratt(string &s, string &p)
     return j == p.size() - 1 ? i - j : -1;
 }
 
+unordered_map<int, int> dp;
+
+int total(int n)
+{
+    if (n < 3)
+    {
+        return 0;
+    }
+    if (n == 3)
+    {
+        return 1;
+    }
+    if (dp.count(n))
+        return dp[n];
+
+    return dp[n] = n / 3 + total(n - (2 * (n / 3)));
+}
+
 void solve()
 {
     int n;
     cin >> n;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
-
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
-    {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
-    }
-    cout << endl;
+    cout << total(n) << endl;
 }
 
 int main()

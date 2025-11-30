@@ -208,42 +208,23 @@ void solve()
     cin >> n;
 
     vector<int> arr(n);
+    bool odd = false, even = false;
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
+        if (arr[i] & 1)
+            odd = true;
+        else
+            even = true;
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    if (odd && even)
     {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
+        sort(all(arr));
+    }
+    for (auto &i : arr)
+    {
+        cout << i << " ";
     }
     cout << endl;
 }

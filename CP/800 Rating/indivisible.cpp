@@ -207,44 +207,25 @@ void solve()
     int n;
     cin >> n;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    if (n > 1 && n & 1)
     {
-        cin >> arr[i];
+        cout << -1 << endl;
+        return;
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    vector<int> arr(n);
+    iota(all(arr), 1);
+
+    for (int i = 0; i < n - 1; i += 2)
     {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
+        swap(arr[i], arr[i + 1]);
     }
+
+    for (auto &i : arr)
+    {
+        cout << i << " ";
+    }
+
     cout << endl;
 }
 

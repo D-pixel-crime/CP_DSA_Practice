@@ -207,45 +207,58 @@ void solve()
     int n;
     cin >> n;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    set<int> a, b;
+    int maxA = INT_MIN, maxB = INT_MIN;
+    for (int i = 1; i <= n; i++)
     {
-        cin >> arr[i];
-    }
-
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
-    {
-        if (odd)
+        char ch;
+        cin >> ch;
+        if (ch == 'A')
         {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            a.insert(i);
+            maxA = max(maxA, i);
         }
         else
         {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            b.insert(i);
+            maxB = max(maxB, i);
         }
-        odd = !odd;
     }
-    cout << endl;
+
+    if (n == 2)
+    {
+        if (maxA == n)
+        {
+            cout << "Bob\n";
+        }
+        else
+            cout << "Alice\n";
+        return;
+    }
+
+    if (a.size() == 1)
+    {
+        cout << "Bob\n";
+        return;
+    }
+    if (b.size() == 1)
+    {
+        cout << "Alice\n";
+        return;
+    }
+
+    if (a.count(n) && a.count(1))
+    {
+        cout << "Alice\n";
+        return;
+    }
+    auto it = upper_bound(all(a), maxB);
+    if (it != a.end() && *it != n)
+    {
+        cout << "Alice\n";
+        return;
+    }
+    cout << "Bob\n";
 }
 
 int main()

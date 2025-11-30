@@ -213,39 +213,48 @@ void solve()
         cin >> arr[i];
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    if (n == 2)
     {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
+        vector<int> curr = {1, 2};
+        if (arr == curr)
+            cout << "Yes\n";
         else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
+            cout << "No\n";
+        return;
     }
-    cout << endl;
+
+    if (arr[n - 1] == 1 || arr[0] == n)
+    {
+        cout << "No\n";
+        return;
+    }
+
+    vector<pair<int, int>> temp(n);
+
+    int last = arr[0];
+    for (int i = 0; i < n; i++)
+    {
+        temp[i].first = last;
+        last = min(arr[i], last);
+    }
+
+    last = arr[n - 1];
+    for (int i = n - 1; i >= 0; i--)
+    {
+        temp[i].second = last;
+        last = max(arr[i], last);
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        if (temp[i].first > temp[i].second)
+        {
+            cout << "No\n";
+            return;
+        }
+    }
+
+    cout << "Yes\n";
 }
 
 int main()

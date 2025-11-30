@@ -207,45 +207,26 @@ void solve()
     int n;
     cin >> n;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    ll ans = 0;
+    priority_queue<ll> pq;
+    while (n--)
     {
-        cin >> arr[i];
-    }
+        ll temp;
+        cin >> temp;
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
-    {
-        if (odd)
+        if (!temp)
         {
-            if (arr[i] <= arr[j])
+            if (!pq.empty())
             {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
+                ans += pq.top();
+                pq.pop();
             }
         }
         else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
+            pq.push(temp);
     }
-    cout << endl;
+
+    cout << ans << endl;
 }
 
 int main()

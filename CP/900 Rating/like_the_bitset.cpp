@@ -16,18 +16,18 @@ int countSetBits(int x)
 
 vector<bool> simpleSieve(int &n)
 {
-    vector<bool> arr(n + 1, true);
+    vector<bool> s(n + 1, true);
     for (int i = 2; i * i <= n; i++)
     {
-        if (arr[i])
+        if (s[i])
         {
             for (int j = i * i; j <= n; j += i)
             {
-                arr[j] = false;
+                s[j] = false;
             }
         }
     }
-    return arr;
+    return s;
 }
 
 int binaryExponentiation(int x, int n, int m = mod)
@@ -204,46 +204,57 @@ int knuthMorrisPratt(string &s, string &p)
 
 void solve()
 {
-    int n;
-    cin >> n;
+    int n, k;
+    cin >> n >> k;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    string s;
+    cin >> s;
+
+    int i = 0;
+    while (i < n)
     {
-        cin >> arr[i];
+        if (s[i] == '0')
+        {
+            i++;
+            continue;
+        }
+        int j = i;
+        while (j < n && s[j] == '1')
+        {
+            j++;
+        }
+
+        int len = j - i;
+        if (len >= k)
+        {
+            cout << "NO\n";
+            return;
+        }
+        i = j;
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    vector<int> ans(n, -1);
+    int curr = 1;
+    for (int i = 0; i < n; i++)
     {
-        if (odd)
+        if (s[i] == '1')
         {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            ans[i] = curr++;
         }
-        else
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        if (ans[i] == -1)
         {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            ans[i] = curr++;
         }
-        odd = !odd;
+    }
+
+    cout << "YES\n";
+    for (auto &i : ans)
+    {
+        cout << i << " ";
     }
     cout << endl;
 }

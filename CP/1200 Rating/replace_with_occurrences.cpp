@@ -207,43 +207,51 @@ void solve()
     int n;
     cin >> n;
 
+    unordered_map<int, pair<int, vector<int>>> cnt;
     vector<int> arr(n);
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
+        cnt[arr[i]].first++;
+        cnt[arr[i]].second.push_back(i);
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    int curr = 0;
+    vector<int> ans(n);
+    for (auto &[i, j] : cnt)
     {
-        if (odd)
+        if (j.first % i || i > n)
         {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            cout << -1 << endl;
+            return;
         }
-        else
+
+        if (curr > n)
         {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            cout << -1 << endl;
+            return;
         }
-        odd = !odd;
+
+        int x = 0;
+        for (auto &k : j.second)
+        {
+            if (!(x % i))
+            {
+                curr++;
+            }
+            if (curr > n)
+            {
+                cout << -1 << endl;
+                return;
+            }
+            x++;
+            ans[k] = curr;
+        }
+    }
+
+    for (auto &i : ans)
+    {
+        cout << i << " ";
     }
     cout << endl;
 }

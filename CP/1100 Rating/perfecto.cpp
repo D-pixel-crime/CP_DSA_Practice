@@ -202,49 +202,47 @@ int knuthMorrisPratt(string &s, string &p)
     return j == p.size() - 1 ? i - j : -1;
 }
 
+bool isPerfectSq(ll n)
+{
+    ll sq = sqrt(n);
+    if (n == sq * sq)
+    {
+        return true;
+    }
+
+    return false;
+}
+
 void solve()
 {
     int n;
     cin >> n;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    ll total = (1LL * n * (n + 1)) / 2;
+    if (isPerfectSq(total))
     {
-        cin >> arr[i];
+        cout << -1 << endl;
+        return;
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    ll sum = 0;
+    int i = 1;
+    while (i <= n)
     {
-        if (odd)
+        sum += i;
+        if (isPerfectSq(sum))
         {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            sum += i + 1;
+            cout << i + 1 << " " << i << " ";
+            i += 2;
         }
         else
         {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            cout << i << " ";
+            i++;
         }
-        odd = !odd;
     }
+
     cout << endl;
 }
 

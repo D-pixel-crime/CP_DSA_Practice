@@ -204,48 +204,35 @@ int knuthMorrisPratt(string &s, string &p)
 
 void solve()
 {
-    int n;
-    cin >> n;
+    string s;
+    cin >> s;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    string a, b;
+    for (int i = 0; i < 2 * s.size(); i++)
     {
-        cin >> arr[i];
+        a.push_back(!(i & 1) ? '(' : ')');
+        b.push_back(i < s.size() ? '(' : ')');
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    if (a.find(s) == string::npos)
     {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
+        cout << "YES\n"
+             << a << endl;
+        return;
     }
-    cout << endl;
+    if (a.find(s) == string::npos)
+    {
+        cout << "YES\n"
+             << a << endl;
+        return;
+    }
+    if (b.find(s) == string::npos)
+    {
+        cout << "YES\n"
+             << b << endl;
+        return;
+    }
+    cout << "NO\n";
 }
 
 int main()

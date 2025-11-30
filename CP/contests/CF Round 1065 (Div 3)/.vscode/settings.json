@@ -2,8 +2,6 @@
   "files.associations": {
     "*.embeddedhtml": "html",
     "iostream": "cpp",
-    "ostream": "cpp",
-    "chrono": "cpp",
-    "valarray": "cpp"
+    "random": "cpp"
   }
 }

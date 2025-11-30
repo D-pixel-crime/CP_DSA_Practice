@@ -204,48 +204,6 @@ int knuthMorrisPratt(string &s, string &p)
 
 void solve()
 {
-    int n;
-    cin >> n;
-
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
-
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
-    {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
-    }
-    cout << endl;
 }
 
 int main()
@@ -253,12 +211,16 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int t;
-    cin >> t;
-    while (t--)
+    ll n, k;
+    cin >> n >> k;
+
+    ll mid = n / 2 + (n % 2);
+    if (k <= mid)
     {
-        solve();
+        cout << (2 * k) - 1 << endl;
     }
+    else
+        cout << 2 * (k - mid) << endl;
 
     return 0;
 }

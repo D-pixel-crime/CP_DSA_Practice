@@ -207,45 +207,33 @@ void solve()
     int n;
     cin >> n;
 
-    vector<int> arr(n);
+    vector<int> pre(n);
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> pre[i];
+        if (i)
+        {
+            pre[i] += pre[i - 1];
+        }
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    for (int i = 0; i < n - 2; i++)
     {
-        if (odd)
+        for (int j = i + 1; j < n - 1; j++)
         {
-            if (arr[i] <= arr[j])
+            int a = pre[i] % 3;
+            int b = (pre[j] - pre[i]) % 3;
+            int c = (pre[n - 1] - pre[j]) % 3;
+
+            if ((a == b && b == c && a == c) || (a != b && b != c && a != c))
             {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
+                cout << i + 1 << " " << j + 1 << endl;
+                return;
             }
         }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
     }
-    cout << endl;
+
+    cout << "0 0\n";
 }
 
 int main()

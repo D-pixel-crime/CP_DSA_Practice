@@ -204,48 +204,20 @@ int knuthMorrisPratt(string &s, string &p)
 
 void solve()
 {
-    int n;
-    cin >> n;
+    int x, y;
+    cin >> x >> y;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    if (y > x)
     {
-        cin >> arr[i];
+        cout << 2 << endl;
+        return;
     }
-
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    if (y == 1 || y >= x - 1)
     {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
+        cout << -1 << endl;
+        return;
     }
-    cout << endl;
+    cout << 3 << endl;
 }
 
 int main()

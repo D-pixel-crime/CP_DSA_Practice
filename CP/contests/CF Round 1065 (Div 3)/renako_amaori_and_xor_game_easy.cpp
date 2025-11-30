@@ -207,45 +207,55 @@ void solve()
     int n;
     cin >> n;
 
-    vector<int> arr(n);
+    vector<int> a(n), b(n);
+    int xA = 0, xB = 0;
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> a[i];
+        xA = xA ^ a[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cin >> b[i];
+        xB = xB ^ b[i];
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    for (int i = 0; i < n; i++)
     {
-        if (odd)
+        if (i & 1)
         {
-            if (arr[i] <= arr[j])
+            if (xB <= xA && a[i] != b[i])
             {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
+                xA = xA ^ a[i];
+                xB = xB ^ b[i];
+
+                xA = xA ^ b[i];
+                xB = xB ^ a[i];
             }
         }
         else
         {
-            if (arr[i] >= arr[j])
+            if (xA <= xB && a[i] != b[i])
             {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
+                xA = xA ^ a[i];
+                xB = xB ^ b[i];
+
+                xA = xA ^ b[i];
+                xB = xB ^ a[i];
             }
         }
-        odd = !odd;
     }
-    cout << endl;
+
+    if (xA == xB)
+    {
+        cout << "Tie\n";
+    }
+    else if (xA > xB)
+    {
+        cout << "Ajisai\n";
+    }
+    else
+        cout << "Mai\n";
 }
 
 int main()

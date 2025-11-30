@@ -207,45 +207,29 @@ void solve()
     int n;
     cin >> n;
 
-    vector<int> arr(n);
+    vector<int> a(n), b(n);
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> a[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cin >> b[i];
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    if (a == b)
     {
-        if (odd)
-        {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
+        cout << "Bob\n";
+        return;
     }
-    cout << endl;
+    reverse(all(a));
+    if (a == b)
+    {
+        cout << "Bob\n";
+        return;
+    }
+
+    cout << "Alice\n";
 }
 
 int main()

@@ -14,9 +14,13 @@ int countSetBits(int x)
     return __builtin_popcount(x);
 }
 
-vector<bool> simpleSieve(int &n)
+vector<bool> simpleSieve(int n)
 {
     vector<bool> arr(n + 1, true);
+    if (n >= 0)
+        arr[0] = false;
+    if (n >= 1)
+        arr[1] = false;
     for (int i = 2; i * i <= n; i++)
     {
         if (arr[i])
@@ -202,49 +206,59 @@ int knuthMorrisPratt(string &s, string &p)
     return j == p.size() - 1 ? i - j : -1;
 }
 
+vector<bool> isPrime;
+
 void solve()
 {
     int n;
     cin >> n;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    vector<int> odd, even;
+    for (int i = 2; i <= n; i++)
     {
-        cin >> arr[i];
+        if (i & 1)
+            odd.push_back(i);
+        else
+            even.push_back(i);
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    vector<int> arr(n + 2, -1);
+    arr[1] = 1;
+
+    for (int i = 2; i <= n - 1 && !even.empty(); i += 3)
     {
-        if (odd)
+        arr[i] = even.back();
+        even.pop_back();
+        if (!even.empty())
         {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            arr[i + 1] = even.back();
+            even.pop_back();
         }
-        else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
     }
+
+    for (int i = 2; i <= n && !odd.empty(); i++)
+    {
+        if (arr[i] == -1)
+        {
+            arr[i] = odd.back();
+            odd.pop_back();
+        }
+    }
+
+    for (int i = 2; i <= n && !even.empty(); i++)
+    {
+        if (arr[i] == -1)
+        {
+            arr[i] = even.back();
+            even.pop_back();
+        }
+    }
+
+    for (int i = 1; i <= n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
     cout << endl;
 }
 

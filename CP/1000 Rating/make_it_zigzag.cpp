@@ -209,43 +209,32 @@ void solve()
 
     vector<int> arr(n);
     for (int i = 0; i < n; i++)
-    {
         cin >> arr[i];
+
+    int ans = 0, lastMax = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        lastMax = max(lastMax, arr[i]);
+        if (i & 1)
+            arr[i] = lastMax;
     }
 
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
+    for (int i = 0; i < n; i += 2)
     {
-        if (odd)
+        int curr = 0;
+        if (i - 1 >= 0 && arr[i] >= arr[i - 1])
         {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            curr = abs(arr[i] - arr[i - 1]) + 1;
         }
-        else
+        if (i + 1 < n && arr[i] >= arr[i + 1])
         {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            curr = max(curr, abs(arr[i] - arr[i + 1]) + 1);
         }
-        odd = !odd;
+
+        ans += curr;
     }
-    cout << endl;
+
+    cout << ans << endl;
 }
 
 int main()

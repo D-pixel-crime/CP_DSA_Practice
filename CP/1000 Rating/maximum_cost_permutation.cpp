@@ -207,45 +207,54 @@ void solve()
     int n;
     cin >> n;
 
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++)
+    vector<int> arr(n + 1);
+    set<int> vis;
+    vector<int> pos;
+    for (int i = 1; i <= n; i++)
     {
         cin >> arr[i];
-    }
-
-    int i = 0, j = n - 1;
-    bool odd = true;
-    while (i <= j)
-    {
-        if (odd)
+        if (!arr[i])
         {
-            if (arr[i] <= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
+            pos.push_back(i);
         }
         else
-        {
-            if (arr[i] >= arr[j])
-            {
-                cout << 'L';
-                i++;
-            }
-            else
-            {
-                cout << 'R';
-                j--;
-            }
-        }
-        odd = !odd;
+            vis.insert(arr[i]);
     }
-    cout << endl;
+
+    for (auto &i : pos)
+    {
+        if (!vis.count(i))
+        {
+            arr[i] = i;
+        }
+    }
+
+    if (!pos.empty())
+    {
+        int temp = arr[pos.back()];
+        for (int i = 1; i < pos.size(); i++)
+        {
+            arr[pos[i]] = arr[pos[i - 1]];
+        }
+        arr[pos[0]] = temp;
+    }
+
+    int start = INT_MAX, end = INT_MIN;
+    for (int i = 1; i <= n; i++)
+    {
+        if (i != arr[i])
+        {
+            start = min(start, i);
+            end = max(end, i);
+        }
+    }
+
+    if (end >= start)
+    {
+        cout << end - start + 1 << endl;
+    }
+    else
+        cout << 0 << endl;
 }
 
 int main()
