@@ -1,0 +1,1 @@
+{"name":"Local: grid_paths","url":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/grid_paths.cpp","tests":[{"id":1786768193517,"input":"4\n....\n.*..\n...*\n*...","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/grid_paths.cpp","group":"local","local":true}

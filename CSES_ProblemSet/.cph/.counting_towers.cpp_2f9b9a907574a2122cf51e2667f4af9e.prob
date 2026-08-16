@@ -1,0 +1,1 @@
+{"name":"Local: counting_towers","url":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/counting_towers.cpp","tests":[{"id":1786852197414,"input":"3\n2\n6\n1337","output":"8\n2864\n640403945"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/counting_towers.cpp","group":"local","local":true}

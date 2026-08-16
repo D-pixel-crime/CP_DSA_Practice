@@ -1,0 +1,1 @@
+{"name":"Local: edit_distance","url":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/edit_distance.cpp","tests":[{"id":1786860944034,"input":"LOVE\nMOVIE","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/edit_distance.cpp","group":"local","local":true}

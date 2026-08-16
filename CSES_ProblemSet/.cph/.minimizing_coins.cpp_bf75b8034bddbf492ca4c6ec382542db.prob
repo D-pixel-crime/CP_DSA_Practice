@@ -1,0 +1,1 @@
+{"name":"Local: minimizing_coins","url":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/minimizing_coins.cpp","tests":[{"id":1786763640727,"input":"3 11\n1 5 7","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/minimizing_coins.cpp","group":"local","local":true}
