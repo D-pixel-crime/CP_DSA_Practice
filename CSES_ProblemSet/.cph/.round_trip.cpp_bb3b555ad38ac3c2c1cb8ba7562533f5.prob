@@ -1,0 +1,1 @@
+{"name":"Local: round_trip","url":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/round_trip.cpp","tests":[{"id":1787870161103,"input":"5 6\n1 3\n1 2\n5 3\n1 5\n2 4\n4 5","output":"4\n1 5 3 1 "}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/round_trip.cpp","group":"local","local":true}

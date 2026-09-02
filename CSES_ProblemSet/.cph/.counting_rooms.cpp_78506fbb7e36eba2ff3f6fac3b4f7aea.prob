@@ -1,0 +1,1 @@
+{"name":"Local: counting_rooms","url":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/counting_rooms.cpp","tests":[{"id":1787749218492,"input":"5 8\n########\n#..#...#\n####.#.#\n#..#...#\n########","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/counting_rooms.cpp","group":"local","local":true}

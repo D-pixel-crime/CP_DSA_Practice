@@ -1,0 +1,1 @@
+{"name":"Local: elevator_rides","url":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/elevator_rides.cpp","tests":[{"id":1787371919249,"input":"4 10\n4 8 6 1","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/elevator_rides.cpp","group":"local","local":true}

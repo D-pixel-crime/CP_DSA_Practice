@@ -1,64 +1,67 @@
 #include <iostream>
-#include <string>
 #include <vector>
+#include <algorithm>
+#include <utility>
 using namespace std;
 
-// string findMin(vector<vector<string>> &dp, vector<string> &g, int i, int j) {
-//   if (!i && !j) {
-//     return string(1, g[i][j]);
-//   }
-//   if (dp[i][j] != ".") {
-//     return dp[i][j];
-//   }
-
-//   string ans = "";
-//   if (i - 1 >= 0) {
-//     ans = findMin(dp, g, i - 1, j);
-//   }
-//   if (j - 1 >= 0) {
-//     ans = ans.empty() ? findMin(dp, g, i, j - 1)
-//                       : min(ans, findMin(dp, g, i, j - 1));
-//   }
-//   ans.push_back(g[i][j]);
-
-//   return dp[i][j] = ans;
-// }
-
-int main() {
+int main()
+{
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
   int n;
   cin >> n;
 
-  vector<string> g(n);
-  for (int i = 0; i < n; i++) {
-    cin >> g[i];
+  vector<string> s(n);
+  for (int i = 0; i < n; i++)
+  {
+    cin >> s[i];
   }
 
-  vector<string> prev(n), curr(n);
-  prev[0] = string(1, g[0][0]);
+  vector<vector<int>> dp(n + 1, vector<int>(n + 1, n + 1));
+  vector<pair<pair<char, int>, pair<int, int>>> curr;
 
-  for (int j = 1; j < n; j++) {
-    prev[j] = prev[j - 1];
-    prev[j].push_back(g[0][j]);
-  }
-
-  for (int i = 1; i < n; i++) {
-    for (int j = 0; j < n; j++) {
-      if (!j) {
-        curr[j] = prev[j];
-      } else {
-        curr[j] = (prev[j] < curr[j - 1]) ? prev[j] : curr[j - 1];
+  for (int d = 2 * n - 2; d >= 0; d--)
+  {
+    curr.clear();
+    for (int i = 0; i < n; i++)
+    {
+      int j = d - i;
+      if (j >= 0 && j < n)
+      {
+        curr.emplace_back(make_pair(s[i][j], min(dp[i + 1][j], dp[i][j + 1])), make_pair(i, j));
       }
-
-      curr[j].push_back(g[i][j]);
     }
 
-    prev.swap(curr);
+    sort(curr.begin(), curr.end());
+    int k = 0;
+
+    for (int p = 0; p < curr.size(); p++)
+    {
+      if (!k || curr[p].first != curr[p - 1].first)
+      {
+        k++;
+      }
+      auto &[i, j] = curr[p].second;
+      dp[i][j] = min(dp[i][j], k);
+    }
   }
 
-  cout << prev[n - 1] << endl;
+  int i = 0, j = 0;
+  while (i < n && j < n)
+  {
+    cout << s[i][j];
+    if (dp[i + 1][j] < dp[i][j + 1])
+    {
+      i++;
+    }
+    else
+    {
+      j++;
+    }
+  }
+
+  cout << endl;
 
   return 0;
 }
