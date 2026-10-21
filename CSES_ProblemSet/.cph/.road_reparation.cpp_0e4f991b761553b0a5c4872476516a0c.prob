@@ -1,0 +1,1 @@
+{"name":"Local: road_reparation","url":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/road_reparation.cpp","tests":[{"id":1788824040808,"input":"5 6\n1 2 3\n2 3 5\n2 4 2\n3 4 8\n5 1 7\n5 4 4","output":"14"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/dark_dementor/CP & DSA/CSES_ProblemSet/road_reparation.cpp","group":"local","local":true}
